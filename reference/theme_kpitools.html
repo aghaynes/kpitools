@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cut KPI indicators — kpi_cut • kpitools</title>
+<title>kpitools ggplot2 theme — theme_kpitools • kpitools</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Cut KPI indicators — kpi_cut" />
-<meta property="og:description" content="Cut KPI indicators" />
+<meta property="og:title" content="kpitools ggplot2 theme — theme_kpitools" />
+<meta property="og:description" content="Theme based on theme_bw and removing y-axis and moving the legend to beneath the plot." />
 
 
 
@@ -103,33 +103,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cut KPI indicators</h1>
+    <h1>kpitools <code>ggplot2</code> theme</h1>
     
-    <div class="hidden name"><code>kpi_cut.Rd</code></div>
+    <div class="hidden name"><code>theme_kpitools.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Cut KPI indicators</p>
+    <p>Theme based on <code>theme_bw</code> and removing y-axis and moving the legend to beneath the plot.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kpi_cut</span><span class='op'>(</span><span class='va'>kpitab</span>, <span class='va'>cutpoints</span>, cutlabels <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>theme_kpitools</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>kpitab</th>
-      <td><p>output from calc_kpi</p></td>
-    </tr>
-    <tr>
-      <th>cutpoints</th>
-      <td><p>cut points (if KPIs use a traffic light system)</p></td>
-    </tr>
-    <tr>
-      <th>cutlabels</th>
-      <td><p>labels for the cut points</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -138,12 +122,11 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>kpitab</span> <span class='op'>&lt;-</span> <span class='va'>mtcars</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='calc_kpi.html'>calc_kpi</a></span><span class='op'>(</span><span class='st'>"mpg"</span>, by <span class='op'>=</span> <span class='st'>"am"</span>, kpi_fn <span class='op'>=</span> <span class='va'>kpi_fn_median</span>, txt <span class='op'>=</span> <span class='st'>"MPG"</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='error'>Error in calc_kpi(., "mpg", by = "am", kpi_fn = kpi_fn_median, txt = "MPG"): </span>could not find function "calc_kpi"</div><div class='input'><span class='va'>cutpoints</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>20</span>, <span class='fl'>30</span><span class='op'>)</span>
-<span class='fu'>kpi_cut</span><span class='op'>(</span><span class='va'>kpitab</span>, <span class='va'>cutpoints</span>, cutlabels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Low"</span>, <span class='st'>"High"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='error'>Error in mutate(., cut = cut(.data$stat, breaks = cutpoints)): </span>object 'kpitab' not found</div><div class='input'><span class='fu'>kpi_cut</span><span class='op'>(</span><span class='va'>kpitab</span>, <span class='va'>cutpoints</span>, cutlabels <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='error'>Error in mutate(., cut = cut(.data$stat, breaks = cutpoints)): </span>object 'kpitab' not found</div><div class='input'><span class='fu'>kpi_cut</span><span class='op'>(</span><span class='va'>kpitab</span>, <span class='va'>cutpoints</span><span class='op'>)</span>
-</div><div class='co'>#&gt; <span class='error'>Error in mutate(., cut = cut(.data$stat, breaks = cutpoints)): </span>object 'kpitab' not found</div></pre>
+    <pre class="examples"><div class='input'><span class='va'>kpi</span> <span class='op'>&lt;-</span> <span class='va'>mtcars</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='kpi.html'>kpi</a></span><span class='op'>(</span><span class='st'>"mpg"</span>, by <span class='op'>=</span> <span class='st'>"cyl"</span>, txt <span class='op'>=</span> <span class='st'>"MPG"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>kpi</span><span class='op'>)</span><span class='op'>$</span><span class='va'>cyl</span> <span class='op'>+</span>
+  <span class='fu'>theme_kpitools</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='theme_kpitools-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
