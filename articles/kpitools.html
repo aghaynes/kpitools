@@ -100,11 +100,17 @@
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; character(0)</span>
 <span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
 <span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;   txt     stat  N</span>
-<span class="co">#&gt; 1 mpg 20.09062 32</span>
+<span class="co">#&gt;   txt  N     stat</span>
+<span class="co">#&gt; 1 mpg 32 20.09062</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attr(,"class")</span>
@@ -128,11 +134,17 @@
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; character(0)</span>
 <span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
 <span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;                txt     stat  N</span>
-<span class="co">#&gt; 1 Miles per gallon 20.09062 32</span>
+<span class="co">#&gt;                txt  N     stat</span>
+<span class="co">#&gt; 1 Miles per gallon 32 20.09062</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attr(,"class")</span>
@@ -210,6 +222,12 @@
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; [1] "perc"</span>
 <span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
 <span class="co">#&gt; $overall$calc</span>
@@ -243,11 +261,54 @@
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; [1] "fn"</span>
 <span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
 <span class="co">#&gt; $overall$calc</span>
 <span class="co">#&gt;   txt    stat</span>
 <span class="co">#&gt; 1 mpg 36.3241</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attr(,"class")</span>
+<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<p>We recommend adding an <code>N</code> the variable with the number of observations, which is used for plotting (the size of points is relative to the number of observations in the group).</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span>
+  <span class="va">x</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
+              stat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">var</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="st">"mpg"</span>, kpi_fn <span class="op">=</span> <span class="va">fn</span><span class="op">)</span>
+<span class="co">#&gt; $settings</span>
+<span class="co">#&gt; $settings$var</span>
+<span class="co">#&gt; [1] "mpg"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$by</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$txt</span>
+<span class="co">#&gt; [1] "mpg"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$kpitype</span>
+<span class="co">#&gt; [1] "fn"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $overall</span>
+<span class="co">#&gt; $overall$calc</span>
+<span class="co">#&gt;   txt  N    stat</span>
+<span class="co">#&gt; 1 mpg 32 36.3241</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attr(,"class")</span>
@@ -258,7 +319,7 @@
 <h2 class="hasAnchor">
 <a href="#hierarchies" class="anchor"></a>Hierarchies</h2>
 <p>We can also look at specific subgroups (e.g. in a clinical trial, we would be interested in the performance of particular countries or centers) via the <code>by</code> argument. Using the <code>mtcars</code> example, we can use the number of cylinders.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">x_by</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
              var <span class="op">=</span> <span class="st">"mpg15"</span>,
              kpi_fn <span class="op">=</span> <span class="va">kpi_fn_perc</span>,
@@ -277,6 +338,12 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; [1] "perc"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
@@ -303,7 +370,7 @@
 <span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
 <p>Here we can see that all of the low mileage cars are in the 8 cylinder group, with 35.7142857% of cars having low mileage.</p>
 <p>We can also pass multiple variables to <code>by</code> (so that we can consider two levels or more levels of hierarchy simultaneously)</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">x_by</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
              var <span class="op">=</span> <span class="st">"mpg15"</span>,
              kpi_fn <span class="op">=</span> <span class="va">kpi_fn_perc</span>,
@@ -322,6 +389,12 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $settings$kpitype</span>
 <span class="co">#&gt; [1] "perc"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; NULL</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $overall</span>
@@ -365,20 +438,20 @@
 <h2 class="hasAnchor">
 <a href="#plotting" class="anchor"></a>Plotting</h2>
 <p>Where hierarchies have been used, KPIs can also be visualized by plotting the object, which returns a list of <code>ggplot2</code> objects (so that you can modify the plots afterwards; we suggest a wide, short plot, e.g. <code>fig.width=7, fig.height=1.5</code> in the R chunk header).</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x_by</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; $cyl</span></code></pre></div>
-<p><img src="kpitools_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
+<p><img src="kpitools_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
 <pre><code>#&gt; 
 #&gt; $am</code></pre>
-<p><img src="kpitools_files/figure-html/unnamed-chunk-9-2.png" width="672"></p>
+<p><img src="kpitools_files/figure-html/unnamed-chunk-10-2.png" width="672"></p>
 <p>The size of the points is relative to the number of observations (participants) in the site/group.</p>
 <p><code>kpitools</code> contains a <code>ggplot2</code> which can be used to remove the y-axis, move the legend and make various other changes:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">p</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_kpitools.html">theme_kpitools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="kpitools_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
-<p>Modifications can be made to all plots easily via e.g. <code>lapply</code> or <code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">p</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_kpitools.html">theme_kpitools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="kpitools_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
+<p>Modifications can be made to all plots easily via e.g. <code>lapply</code> or <code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2</a></span><span class="op">(</span><span class="va">p</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">{</span>
   <span class="va">x</span> <span class="op">+</span>                                       <span class="co"># extract the ggplot object</span>
     <span class="fu"><a href="../reference/theme_kpitools.html">theme_kpitools</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>                      <span class="co"># apply the theme</span>
@@ -386,9 +459,62 @@
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">toupper</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span>                     <span class="co"># add a title</span>
 <span class="op">}</span><span class="op">)</span></code></pre></div>
 <p>The <code>patchwork</code> package, for example, could then be used to arrange the plots</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">patchwork</span><span class="fu">::</span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">wrap_plots</a></span><span class="op">(</span><span class="va">p</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
-<p><img src="kpitools_files/figure-html/unnamed-chunk-12-1.png" width="672"></p>
+<p><img src="kpitools_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
+</div>
+<div id="from-statistics-to-risk" class="section level2">
+<h2 class="hasAnchor">
+<a href="#from-statistics-to-risk" class="anchor"></a>From statistics to risk</h2>
+<p>It is quite common when talking about KPIs to link a given value of the summary statistic to a degree of risk. <code>kpitools</code> provides provisions for this too, via the <code>breakpoints</code> argument.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
+    var <span class="op">=</span> <span class="st">"mpg"</span>,
+    txt <span class="op">=</span> <span class="st">"Milage per gallon"</span>,
+    by <span class="op">=</span> <span class="st">"cyl"</span>,
+    breakpoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; $settings</span>
+<span class="co">#&gt; $settings$var</span>
+<span class="co">#&gt; [1] "mpg"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$by</span>
+<span class="co">#&gt; [1] "cyl"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$txt</span>
+<span class="co">#&gt; [1] "Milage per gallon"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$kpitype</span>
+<span class="co">#&gt; character(0)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$breakpoints</span>
+<span class="co">#&gt; [1]  0 20 30</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; [1] "low"  "high"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $overall</span>
+<span class="co">#&gt; $overall$calc</span>
+<span class="co">#&gt;                 txt  N     stat risk</span>
+<span class="co">#&gt; 1 Milage per gallon 32 20.09062 high</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $cyl</span>
+<span class="co">#&gt; $cyl$calc</span>
+<span class="co">#&gt; # A tibble: 3 x 5</span>
+<span class="co">#&gt;   txt                 cyl     N  stat risk </span>
+<span class="co">#&gt;   &lt;chr&gt;             &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;fct&gt;</span>
+<span class="co">#&gt; 1 Milage per gallon     4    11  26.7 high </span>
+<span class="co">#&gt; 2 Milage per gallon     6     7  19.7 low  </span>
+<span class="co">#&gt; 3 Milage per gallon     8    14  15.1 low  </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $cyl$outlier</span>
+<span class="co">#&gt; # A tibble: 0 x 4</span>
+<span class="co">#&gt; # … with 4 variables: txt &lt;chr&gt;, cyl &lt;dbl&gt;, N &lt;int&gt;, stat &lt;dbl&gt;</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attr(,"class")</span>
+<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
 </div>
   </div>
 
