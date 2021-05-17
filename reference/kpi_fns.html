@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • kpitools</title>
+<title>Get a list of KPI summary functions provided by kpitools. — kpi_fns • kpitools</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Get a list of KPI summary functions provided by kpitools. — kpi_fns" />
+<meta property="og:description" content="Get a list of KPI summary functions provided by kpitools." />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -103,96 +104,33 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Get a list of KPI summary functions provided by <code>kpitools</code>.</h1>
+    
+    <div class="hidden name"><code>kpi_fns.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Get a list of KPI summary functions provided by <code>kpitools</code>.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>kpi_fns</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="c.kpi.html">c(<i>&lt;kpi&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Concatenate <code>kpi</code> objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calc_kpi.html">calc_kpi()</a></code> </p>
-        </td>
-        <td><p>Calculate KPIs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="kpi.html">kpi()</a></code> </p>
-        </td>
-        <td><p>Create KPI tables</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="kpi_cut.html">kpi_cut()</a></code> </p>
-        </td>
-        <td><p>Cut KPI indicators</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="kpi_fn_.html">kpi_fn_n()</a></code> <code><a href="kpi_fn_.html">kpi_fn_prop()</a></code> <code><a href="kpi_fn_.html">kpi_fn_perc()</a></code> <code><a href="kpi_fn_.html">kpi_fn_median()</a></code> <code><a href="kpi_fn_.html">kpi_fn_mean()</a></code> <code><a href="kpi_fn_.html">kpi_fn_iqr()</a></code> <code><a href="kpi_fn_.html">kpi_fn_min()</a></code> <code><a href="kpi_fn_.html">kpi_fn_max()</a></code> </p>
-        </td>
-        <td><p>KPI summary functions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="kpi_fns.html">kpi_fns()</a></code> </p>
-        </td>
-        <td><p>Get a list of KPI summary functions provided by <code>kpitools</code>.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="kpi_outlier.html">kpi_outlier()</a></code> </p>
-        </td>
-        <td><p>Get the outliers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot.kpi.html">plot(<i>&lt;kpi&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Plot KPI objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.kpi.html">print(<i>&lt;kpi&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print method for kpi objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="theme_kpitools.html">theme_kpitools()</a></code> </p>
-        </td>
-        <td><p>kpitools <code>ggplot2</code> theme</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>character vector of functions</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>kpi_fn_</p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span class='fu'>kpi_fns</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "kpi_fn_iqr"    "kpi_fn_max"    "kpi_fn_mean"   "kpi_fn_median"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [5] "kpi_fn_min"    "kpi_fn_n"      "kpi_fn_perc"   "kpi_fn_prop"  </span>
+</pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

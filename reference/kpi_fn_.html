@@ -358,36 +358,6 @@ functions return <code>stat</code> and <code>N</code>, with some also returning 
 <span class='r-in'></span>
 <span class='r-in'></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='va'>fn</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>{</span></span>
-<span class='r-in'>  <span class='va'>x</span> <span class='op'>%&gt;%</span></span>
-<span class='r-in'>    <span class='fu'>summarize</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span><span class='op'>(</span><span class='va'>var</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
-<span class='r-in'></span>
-<span class='r-in'><span class='fu'><a href='kpi.html'>kpi</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='st'>"mpg"</span>, kpi_fn <span class='op'>=</span> <span class='va'>fn</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $settings</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $settings$var</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "mpg"</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $settings$by</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> NULL</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $settings$txt</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "mpg"</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $settings$kpitype</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "fn"</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $overall</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $overall$calc</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>   txt    stat</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 mpg 36.3241</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> attr(,"class")</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "kpi"  "list"</span>
-<span class='r-in'></span>
-<span class='r-in'></span>
 </pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
