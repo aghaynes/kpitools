@@ -87,68 +87,18 @@
 <code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
           var <span class="op">=</span> <span class="st">"mpg"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; character(0)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;   txt  N     stat</span>
-<span class="co">#&gt; 1 mpg 32 20.09062</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;  txt  N     stat</span>
+<span class="co">#&gt;  mpg 32 20.09062</span></code></pre></div>
 <p>We see that the 32 cars have a mean MPG of 20 miles per gallon.</p>
 <p>We can improve the output slightly by adding a more meaningful label via the <code>txt</code> argument.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
     var <span class="op">=</span> <span class="st">"mpg"</span>,
     txt <span class="op">=</span> <span class="st">"Miles per gallon"</span><span class="op">)</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "Miles per gallon"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; character(0)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;                txt  N     stat</span>
-<span class="co">#&gt; 1 Miles per gallon 32 20.09062</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;               txt  N     stat</span>
+<span class="co">#&gt;  Miles per gallon 32 20.09062</span></code></pre></div>
 <div id="summary-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#summary-functions" class="anchor"></a>Summary functions</h2>
@@ -209,34 +159,9 @@
     var <span class="op">=</span> <span class="st">"mpg15"</span>,
     kpi_fn <span class="op">=</span> <span class="va">kpi_fn_perc</span>,
     txt <span class="op">=</span> <span class="st">"Milage &lt; 15 MPG"</span><span class="op">)</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg15"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "Milage &lt; 15 MPG"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; [1] "perc"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;               txt n  N   stat</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG 5 32 15.625</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;              txt n  N   stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG 5 32 15.625</span></code></pre></div>
 <div id="using-custom-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#using-custom-functions" class="anchor"></a>Using custom functions</h3>
@@ -248,34 +173,9 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="st">"mpg"</span>, kpi_fn <span class="op">=</span> <span class="va">fn</span><span class="op">)</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; [1] "fn"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;   txt    stat</span>
-<span class="co">#&gt; 1 mpg 36.3241</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;  txt    stat</span>
+<span class="co">#&gt;  mpg 36.3241</span></code></pre></div>
 <p>We recommend adding an <code>N</code> the variable with the number of observations, which is used for plotting (the size of points is relative to the number of observations in the group).</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span>
@@ -285,34 +185,9 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="st">"mpg"</span>, kpi_fn <span class="op">=</span> <span class="va">fn</span><span class="op">)</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "mpg"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; [1] "fn"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;   txt  N    stat</span>
-<span class="co">#&gt; 1 mpg 32 36.3241</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;  txt  N    stat</span>
+<span class="co">#&gt;  mpg 32 36.3241</span></code></pre></div>
 </div>
 </div>
 <div id="hierarchies" class="section level2">
@@ -326,48 +201,17 @@
              txt <span class="op">=</span> <span class="st">"Milage &lt; 15 MPG"</span>,
              by <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x_by</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg15"</span>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;              txt n  N   stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG 5 32 15.625</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; [1] "cyl"</span>
+<span class="co">#&gt; Grouped by cyl:</span>
+<span class="co">#&gt;              txt cyl n  N     stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   4 0 11  0.00000</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   6 0  7  0.00000</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   8 5 14 35.71429</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "Milage &lt; 15 MPG"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; [1] "perc"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;               txt n  N   stat</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG 5 32 15.625</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl</span>
-<span class="co">#&gt; $cyl$calc</span>
-<span class="co">#&gt; # A tibble: 3 x 5</span>
-<span class="co">#&gt;   txt               cyl     n     N  stat</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG     4     0    11   0  </span>
-<span class="co">#&gt; 2 Milage &lt; 15 MPG     6     0     7   0  </span>
-<span class="co">#&gt; 3 Milage &lt; 15 MPG     8     5    14  35.7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl$outlier</span>
-<span class="co">#&gt; # A tibble: 0 x 5</span>
-<span class="co">#&gt; # … with 5 variables: txt &lt;chr&gt;, cyl &lt;dbl&gt;, n &lt;int&gt;, N &lt;int&gt;, stat &lt;dbl&gt;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; No outliers</span></code></pre></div>
 <p>Here we can see that all of the low mileage cars are in the 8 cylinder group, with 35.7142857% of cars having low mileage.</p>
 <p>We can also pass multiple variables to <code>by</code> (so that we can consider two levels or more levels of hierarchy simultaneously)</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -377,61 +221,23 @@
              txt <span class="op">=</span> <span class="st">"Milage &lt; 15 MPG"</span>,
              by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"am"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">x_by</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg15"</span>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;              txt n  N   stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG 5 32 15.625</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; [1] "cyl" "am" </span>
+<span class="co">#&gt; Grouped by cyl:</span>
+<span class="co">#&gt;              txt cyl n  N     stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   4 0 11  0.00000</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   6 0  7  0.00000</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG   8 5 14 35.71429</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "Milage &lt; 15 MPG"</span>
+<span class="co">#&gt; No outliers</span>
+<span class="co">#&gt; Grouped by am:</span>
+<span class="co">#&gt;              txt am n  N     stat</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG  0 5 19 26.31579</span>
+<span class="co">#&gt;  Milage &lt; 15 MPG  1 0 13  0.00000</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; [1] "perc"</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
-<span class="co">#&gt; NULL</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;               txt n  N   stat</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG 5 32 15.625</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl</span>
-<span class="co">#&gt; $cyl$calc</span>
-<span class="co">#&gt; # A tibble: 3 x 5</span>
-<span class="co">#&gt;   txt               cyl     n     N  stat</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG     4     0    11   0  </span>
-<span class="co">#&gt; 2 Milage &lt; 15 MPG     6     0     7   0  </span>
-<span class="co">#&gt; 3 Milage &lt; 15 MPG     8     5    14  35.7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl$outlier</span>
-<span class="co">#&gt; # A tibble: 0 x 5</span>
-<span class="co">#&gt; # … with 5 variables: txt &lt;chr&gt;, cyl &lt;dbl&gt;, n &lt;int&gt;, N &lt;int&gt;, stat &lt;dbl&gt;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $am</span>
-<span class="co">#&gt; $am$calc</span>
-<span class="co">#&gt; # A tibble: 2 x 5</span>
-<span class="co">#&gt;   txt                am     n     N  stat</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Milage &lt; 15 MPG     0     5    19  26.3</span>
-<span class="co">#&gt; 2 Milage &lt; 15 MPG     1     0    13   0  </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $am$outlier</span>
-<span class="co">#&gt; # A tibble: 0 x 5</span>
-<span class="co">#&gt; # … with 5 variables: txt &lt;chr&gt;, am &lt;dbl&gt;, n &lt;int&gt;, N &lt;int&gt;, stat &lt;dbl&gt;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; No outliers</span></code></pre></div>
 <p>Here, we see that cars with manual gearboxes are more problematic than those with automatic gearboxes.</p>
 </div>
 <div id="plotting" class="section level2">
@@ -448,7 +254,7 @@
 <p>The size of the points is relative to the number of observations (participants) in the site/group.</p>
 <p><code>kpitools</code> contains a <code>ggplot2</code> which can be used to remove the y-axis, move the legend and make various other changes:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">p</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_kpitools.html">theme_kpitools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">p</span><span class="op">$</span><span class="va">cyl</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_kpitools.html">theme_kpitools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="kpitools_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
 <p>Modifications can be made to all plots easily via e.g. <code>lapply</code> or <code><a href="https://purrr.tidyverse.org/reference/map.html">purrr::map</a></code></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
@@ -462,10 +268,15 @@
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">patchwork</span><span class="fu">::</span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">wrap_plots</a></span><span class="op">(</span><span class="va">p</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <p><img src="kpitools_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
+<!-- ### Other modifications -->
+<!-- ```{r, fig.width=7, fig.height=1.5} -->
+<!-- p$cyl + theme_kpitools() + -->
+<!--  ggrepel::geom_label_repel(aes(label = cyl, size = 1), inherit.aes = FALSE) -->
+<!-- ``` -->
 </div>
-<div id="from-statistics-to-risk" class="section level2">
+<div id="from-summary-statistics-to-risk" class="section level2">
 <h2 class="hasAnchor">
-<a href="#from-statistics-to-risk" class="anchor"></a>From statistics to risk</h2>
+<a href="#from-summary-statistics-to-risk" class="anchor"></a>From summary statistics to risk</h2>
 <p>It is quite common when talking about KPIs to link a given value of the summary statistic to a degree of risk. <code>kpitools</code> provides provisions for this too, via the <code>breakpoints</code> argument.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
@@ -473,48 +284,65 @@
     txt <span class="op">=</span> <span class="st">"Milage per gallon"</span>,
     by <span class="op">=</span> <span class="st">"cyl"</span>,
     breakpoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; $settings</span>
-<span class="co">#&gt; $settings$var</span>
-<span class="co">#&gt; [1] "mpg"</span>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;                txt  N     stat risk</span>
+<span class="co">#&gt;  Milage per gallon 32 20.09062 high</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$by</span>
-<span class="co">#&gt; [1] "cyl"</span>
+<span class="co">#&gt; Grouped by cyl:</span>
+<span class="co">#&gt;                txt cyl  N     stat risk</span>
+<span class="co">#&gt;  Milage per gallon   4 11 26.66364 high</span>
+<span class="co">#&gt;  Milage per gallon   6  7 19.74286  low</span>
+<span class="co">#&gt;  Milage per gallon   8 14 15.10000  low</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$txt</span>
-<span class="co">#&gt; [1] "Milage per gallon"</span>
+<span class="co">#&gt; No outliers</span></code></pre></div>
+<p>If the higher numbers of the summary statistic are related to lower risk, the <code>direction</code> argument can be used to invert the label order. The options are either <code>increasing</code> or <code>decreasing</code> and abbreviations are accepted.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
+    var <span class="op">=</span> <span class="st">"mpg"</span>,
+    txt <span class="op">=</span> <span class="st">"Milage per gallon"</span>,
+    by <span class="op">=</span> <span class="st">"cyl"</span>,
+    breakpoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span>,
+    direction <span class="op">=</span> <span class="st">"decreasing"</span><span class="op">)</span> 
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;                txt  N     stat risk</span>
+<span class="co">#&gt;  Milage per gallon 32 20.09062  low</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$kpitype</span>
-<span class="co">#&gt; character(0)</span>
+<span class="co">#&gt; Grouped by cyl:</span>
+<span class="co">#&gt;                txt cyl  N     stat risk</span>
+<span class="co">#&gt;  Milage per gallon   4 11 26.66364  low</span>
+<span class="co">#&gt;  Milage per gallon   6  7 19.74286 high</span>
+<span class="co">#&gt;  Milage per gallon   8 14 15.10000 high</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$breakpoints</span>
-<span class="co">#&gt; [1]  0 20 30</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $settings$risklabels</span>
+<span class="co">#&gt; No outliers</span></code></pre></div>
+<p>By default, the number of breakpoints is used to create variations on high to low via the <code>risklabs</code> function. For instance, giving three to six values as breakpoints produces the following sets of labels. For more than 5 groups (six breakpoints), labels must be defined manually.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/risklabs.html">risklabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] "low"  "high"</span>
+<span class="fu"><a href="../reference/risklabs.html">risklabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] "low"      "moderate" "high"</span>
+<span class="fu"><a href="../reference/risklabs.html">risklabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] "very low"  "low"       "high"      "very high"</span>
+<span class="fu"><a href="../reference/risklabs.html">risklabs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">50</span>, <span class="fl">60</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] "very low"  "low"       "moderate"  "high"      "very high"</span></code></pre></div>
+<p>It’s simple to override these labels with the <code>risklabels</code> argument (be careful combining <code>risklabels</code> and <code>direction</code> arguments as the label order will be inverted).</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/kpi.html">kpi</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mtcars</span>, 
+    var <span class="op">=</span> <span class="st">"mpg"</span>,
+    txt <span class="op">=</span> <span class="st">"Milage per gallon"</span>,
+    by <span class="op">=</span> <span class="st">"cyl"</span>,
+    breakpoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">20</span>, <span class="fl">30</span><span class="op">)</span>, 
+    risklabels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"too low"</span>, <span class="st">"too high"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Study level:</span>
+<span class="co">#&gt;                txt  N     stat     risk</span>
+<span class="co">#&gt;  Milage per gallon 32 20.09062 too high</span>
 <span class="co">#&gt; </span>
+<span class="co">#&gt; Grouped by cyl:</span>
+<span class="co">#&gt;                txt cyl  N     stat     risk</span>
+<span class="co">#&gt;  Milage per gallon   4 11 26.66364 too high</span>
+<span class="co">#&gt;  Milage per gallon   6  7 19.74286  too low</span>
+<span class="co">#&gt;  Milage per gallon   8 14 15.10000  too low</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $overall</span>
-<span class="co">#&gt; $overall$calc</span>
-<span class="co">#&gt;                 txt  N     stat risk</span>
-<span class="co">#&gt; 1 Milage per gallon 32 20.09062 high</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl</span>
-<span class="co">#&gt; $cyl$calc</span>
-<span class="co">#&gt; # A tibble: 3 x 5</span>
-<span class="co">#&gt;   txt                 cyl     N  stat risk </span>
-<span class="co">#&gt;   &lt;chr&gt;             &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;fct&gt;</span>
-<span class="co">#&gt; 1 Milage per gallon     4    11  26.7 high </span>
-<span class="co">#&gt; 2 Milage per gallon     6     7  19.7 low  </span>
-<span class="co">#&gt; 3 Milage per gallon     8    14  15.1 low  </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cyl$outlier</span>
-<span class="co">#&gt; # A tibble: 0 x 4</span>
-<span class="co">#&gt; # … with 4 variables: txt &lt;chr&gt;, cyl &lt;dbl&gt;, N &lt;int&gt;, stat &lt;dbl&gt;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "kpi"  "list"</span></code></pre></div>
+<span class="co">#&gt; No outliers</span></code></pre></div>
 </div>
   </div>
 
